@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LogService } from './services/log.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  
+  constructor(private logger: LogService) {  }
+
+  logMsg() {
+    this.logger.error('Log the first msg', 'Eftakhar', 'Ali' , 1, 2);
+  }
 }
